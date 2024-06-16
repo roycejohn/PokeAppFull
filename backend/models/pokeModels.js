@@ -1,8 +1,8 @@
 
-function pokeModels() {
-  return (
-    <div>pokeModels</div>
-  )
-}
+// function pokeModels() {
+//   return (
+//     <div>pokeModels</div>
+//   )
+// }
 
-export default pokeModels
+// export default pokeModels
