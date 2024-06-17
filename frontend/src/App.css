@@ -1,4 +1,4 @@
-/* Basic styling for the sign-up container */
+
 .sign-up-container {
   max-width: 400px;
   margin: 0 auto;
@@ -8,18 +8,18 @@
   background-color: #f9f9f9;
 }
 
-/* Styles for the form inside the sign-up container */
+
 .sign-up-form {
   display: flex;
   flex-direction: column;
 }
 
-/* Styles for form labels */
+
 .sign-up-form label {
   margin-bottom: 8px;
 }
 
-/* Styles for form inputs */
+
 .sign-up-form input {
   padding: 8px;
   margin-bottom: 16px;
@@ -28,7 +28,7 @@
   font-size: 16px;
 }
 
-/* Styles for submit button */
+
 .sign-up-form button {
   padding: 10px 20px;
   background-color: #007bff;
@@ -39,7 +39,7 @@
   font-size: 18px;
 }
 
-/* Hover effect for the submit button */
+
 .sign-up-form button:hover {
   background-color: #0056b3;
 }

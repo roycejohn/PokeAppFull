@@ -1,100 +1,93 @@
-// import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 
-// const Login = ({ setUser }) => {
-//   const [formValues, setFormValues] = useState({
-//     email: '',
-//     password: '',
-//   });
+// import { useState } from "react";
+// import { Link, useNavigate } from 'react-router-dom';
+// import Axios from 'axios';
 
-//   const [error, setError] = useState(null);
-//   const [loading, setLoading] = useState(false);
+// const Login = () => {
+//   const [email, setEmail] = useState();
+//   const [password, setPassword] = useState();
 
-//   const navigate = useNavigate();
+//   const navigate = useNavigate ()
 
-//   const handleInput = (e) => {
-//     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-//   };
-
-//   const handleSubmit = async (e) => {
+//   Axios.defaults.withCredentials = true;
+//   const handleSubmit = (e) => {
 //     e.preventDefault();
-
-//     setError(null);
-//     setLoading(true);
-//     try {
-//       const response = await fetch('http://localhost:4000/user/login', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(formValues),
-//       });
-
-//       if (!response.ok) {
-//         throw new Error('Failed to login');
+//     Axios.post('http://localhost:4000/auth/login',{
+     
+//       email,
+//       password,
+//     }).then(response =>{
+//       // console.log(response)
+//       if(response.data.status){
+//         navigate('/')
 //       }
-
-
-//       const data = await response.json();
-//       localStorage.setItem('token', data.token);
-//       setUser(true);
-//       navigate('/posts');
-//     } catch (error) {
-//       setError(error.message);
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
+      
+//     }).catch(err => {
+//       console.log(err)
+//     })
+//   }
 
 //   return (
-//     <form onSubmit={handleSubmit}>
+//     <div className="sign-up-container">
 //       <h2>Log in</h2>
-//       <label htmlFor='email'>Email</label>
-//       <input type='text' name='email' id='email' value={formValues.email} onChange={handleInput} />
-//       <br />
-//       <label htmlFor='password'>Password</label>
-//       <input type='password' name='password' id='password' value={formValues.password} onChange={handleInput} /> <br />
-//       <button disabled={loading}>Login</button>
-//       {error && <p>{error}</p>}
-//     </form>
+//       <form className="sign-up-form" onSubmit={handleSubmit}>
+        
+//         <label htmlFor="email">Email:</label>
+//         <input
+//           type="email"
+//           autoComplete="off"
+//           placeholder="Email"
+//           onChange={(e) => setEmail(e.target.value)}
+//         />
+//         <label htmlFor="password">Password:</label>
+//         <input
+//           type="password"
+//           placeholder="password"
+//           onChange={(e) => setPassword(e.target.value)}
+//         />
+//         <button type="submit">Login</button>
+//         <p>Dont have an account?</p> <Link to='/signup'>Sign Up</Link>
+//       </form>
+//     </div>
 //   );
-// };
+// }; 
 
 // export default Login;
 
-
-
 import { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Axios from 'axios';
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const location = useLocation();
+  const username = location.state?.username;
 
-  const navigate = useNavigate ()
+  const navigate = useNavigate();
 
   Axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:4000/auth/login',{
-     
+    Axios.post('http://localhost:4000/auth/login', {
       email,
       password,
-    }).then(response =>{
-      // console.log(response)
-      if(response.data.status){
-        navigate('/')
+    }).then(response => {
+      if (response.data.status) {
+        navigate('/');
       }
-      
     }).catch(err => {
-      console.log(err)
-    })
+      console.log(err);
+    });
   }
+
+  console.log('Location state:', location.state);
 
   return (
     <div className="sign-up-container">
+      {username && <p>Welcome, {username}!</p>}
       <h2>Log in</h2>
       <form className="sign-up-form" onSubmit={handleSubmit}>
-        
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -105,7 +98,7 @@ const Login = () => {
         <label htmlFor="password">Password:</label>
         <input
           type="password"
-          placeholder="******"
+          placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
@@ -113,6 +106,6 @@ const Login = () => {
       </form>
     </div>
   );
-}; 
+};
 
 export default Login;

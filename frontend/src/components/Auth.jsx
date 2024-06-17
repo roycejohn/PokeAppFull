@@ -2,7 +2,7 @@ import axios from "axios"
 import { Link, useNavigate} from "react-router-dom"
 
 
-const Home = () => {
+const Auth = () => {
     const navigate = useNavigate()
     axios.defaults.withCredentials= true;
     const handleLogout =() => {
@@ -17,7 +17,7 @@ const Home = () => {
     }
   return (
     <div>
-        Home
+        AUTH
         <button><Link to='/dashboard'>Dashboard</Link></button>
         <br/>  <br/>
         <button onClick={handleLogout}>Logout</button>
@@ -25,4 +25,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Auth

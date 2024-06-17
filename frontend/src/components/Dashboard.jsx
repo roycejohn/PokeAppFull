@@ -1,28 +1,3 @@
-// import axios from "axios"
-// import { useEffect } from "react"
-// import { useNavigate } from "react-router-dom"
-
-
-// const Dashboard = () => {
-//     const navigate = useNavigate()
-//     useEffect(() => {
-//         axios.get('http://localhost:4001/auth/verify')
-//         .then(res=> {
-//             if (res.data.status) {
-
-//             } else {
-//                 navigate('/')
-//             }
-//         })
-//     }), [])
-
-//   return (
-//     <div>Dashboard</div>
-//   )
-// }
-
-// export default Dashboard
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -38,7 +13,6 @@ const Dashboard = () => {
         axios.get('http://localhost:4000/auth/verify')
             .then(res => {
                 if (res.data.status) {
-                    // User is verified, you can handle any additional logic here
                     setLoading(false);
                 } else {
                     navigate('/');
@@ -49,7 +23,7 @@ const Dashboard = () => {
                 setError("Error verifying user");
                 navigate('/');
             });
-    }, [navigate]); // Dependency array should include 'navigate'
+    }, [navigate]); 
 
     if (loading) {
         return <div>Loading...</div>;
