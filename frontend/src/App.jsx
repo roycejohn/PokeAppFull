@@ -49,61 +49,69 @@
 
 // export default App;
 
-import { Route, Routes,} from 'react-router-dom';
-import Signup from './components/Signup';
-import Login from './components/Login'
-import './App.css';
-import Auth from './components/Auth';
-import Dashboard from './components/Dashboard';
-
-function App() {
-  return (
-    <Routes>
-      <Route path='/' element={<Auth />} />
-      <Route path= '/signup' element={<Signup />} />
-      <Route path= '/login' element={<Login />} />
-      <Route path='/dashboard' element={<Dashboard />} />
-    </Routes>
-  )
-}
-
-export default App
-
-
-// import './App.css'
-// import { Routes, Route } from 'react-router-dom'
-// import Header from './components/Header'
-// import Footer from './components/Footer'
-// import Home from './Pages/Home'
-// import PokeList from './Pages/PokeList'
-// import PokeDetails from './components/PokeDetails'
-// import About from './Pages/About'
-// import Game from './Pages/Game'
-// import PokeBoard from './Pages/PokeBoard'
-// import PokeFight from './Pages/PokeFight'
-
-
+// import { Route, Routes,} from 'react-router-dom';
+// import './App.css';
+// import Signup from './components/Signup';
+// import Login from './components/Login'
+// import Auth from './components/Auth';
+// import Dashboard from './pages/Dashboard';
 
 // function App() {
-//   return(
-//     <div className="app-container">
-//         <Header />
-//         <div className="content">
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/pokemons" element={<PokeList />} />
-//             <Route path="/pokemons/:id" element={<PokeDetails />} />
-//             <Route path="/game" element={<Game />} />
-//             <Route path='/game/pokeboard' element={<PokeBoard />} />
-//             <Route path='/game/pokefight' element={<PokeFight />} />
-//             <Route path="/about" element={<About />} />
-//           </Routes>
-//         </div>
-//         <Footer />
-//       </div>
-//   );
- 
+//   return (
+//     <Routes>
+//       <Route path='/' element={<Auth />} />
+//       <Route path= '/signup' element={<Signup />} />
+//       <Route path= '/login' element={<Login />} />
+//       <Route path='/dashboard' element={<Dashboard />} />
+//     </Routes>
+//   )
 // }
 
 // export default App
+
+
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './Pages/Home'
+import PokeList from './Pages/PokeList'
+import PokeDetails from './components/PokeDetails'
+import About from './Pages/About'
+import Game from './Pages/Game'
+import PokeBoard from './Pages/PokeBoard'
+import PokeFight from './Pages/PokeFight'
+import Signup from './components/Signup';
+import Login from './components/Login'
+import Auth from './components/Auth';
+import Dashboard from './Pages/Dashboard';
+
+
+
+function App() {
+  return(
+    <div className="app-container">
+        <Header />
+        <div className="content">
+          <Routes>
+            <Route path='/' element={<Auth />} />
+            <Route path= '/signup' element={<Signup />} />
+            <Route path= '/login' element={<Login />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/pokemons" element={<PokeList />} />
+            <Route path="/pokemons/:id" element={<PokeDetails />} />
+            <Route path="/game" element={<Game />} />
+            <Route path='/game/pokeboard' element={<PokeBoard />} />
+            <Route path='/game/pokefight' element={<PokeFight />} />
+            <Route path="/about" element={<About />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+  );
+ 
+}
+
+export default App
 

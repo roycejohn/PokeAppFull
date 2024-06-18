@@ -1,8 +1,9 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 
-const Dashboard = () => {
+const ProtectedRoute = ({ children }) => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -15,15 +16,15 @@ const Dashboard = () => {
                 if (res.data.status) {
                     setLoading(false);
                 } else {
-                    navigate('/');
+                    navigate('/login');
                 }
             })
             .catch(error => {
                 console.error("Error verifying user:", error);
                 setError("Error verifying user");
-                navigate('/');
+                navigate('/login');
             });
-    }, [navigate]); 
+    }, [navigate]);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -33,9 +34,11 @@ const Dashboard = () => {
         return <div>{error}</div>;
     }
 
-    return (
-        <div>Dashboard</div>
-    );
-}
+    return children;
+};
 
-export default Dashboard;
+ProtectedRoute.propTypes = {
+    children: PropTypes.node.isRequired,
+};
+
+export default ProtectedRoute;

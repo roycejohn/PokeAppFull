@@ -74,7 +74,7 @@ const Login = () => {
       password,
     }).then(response => {
       if (response.data.status) {
-        navigate('/');
+        navigate('/home', { state: { username: response.data.username } });
       }
     }).catch(err => {
       console.log(err);
@@ -85,7 +85,7 @@ const Login = () => {
 
   return (
     <div className="sign-up-container">
-      {username && <p>Welcome, {username}!</p>}
+      {username && <p>Welcome, {username}, please log in!</p>}
       <h2>Log in</h2>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
