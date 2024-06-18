@@ -45,7 +45,7 @@ const loginUser = async (req, res) => {
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, process.env.JWT_SECRET, { expiresIn: '1h'   
         });
         res.cookie("token", token, { httpOnly: true, maxAge: 360000 });
-        return res.json({ status: true, message: "login successfully" });
+        return res.json({ status: true, message: "login successfully", username: existingUser.username });
     
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });
@@ -61,4 +61,19 @@ const authVerifyUser = async (req, res) => {
     return res.json({ status: true, message: 'Authorized' });
 };
 
-export { loginUser, signupUser, authVerifyUser, logoutUser };
+// export { loginUser, signupUser, authVerifyUser, logoutUser };
+
+
+
+// New function to get all users
+const getAllUsers = async (req, res) => {
+    try {
+        const users = await User.find({});
+        res.status(200).json(users);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+export { loginUser, signupUser, authVerifyUser, logoutUser, getAllUsers };
