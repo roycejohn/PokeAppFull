@@ -6,31 +6,32 @@ import pokefightImage from '../assets/fightLogo.png';
 function Game() {
   return (
     // <ProtectedRoute>
-      <div className="text-center py-8">
-        <div className="my-8 max-w-4xl mx-auto">
-          <h1 className='text-5xl font-bold mb-4 text-gray-800'>
-            Pokémon Games
-          </h1>
-          <p className="text-xl text-gray-600 mb-4">Choose your game:</p>
-          <div className='flex justify-center space-x-10 m-10'>
+      <div className="mx-auto max-w-screen-2xl min-h-fit flex flex-col justify-center items-center">
+          <div className="flex flex-col items-center m-4 md:m-10 p-2 md:p-8">
+            <h1 className='text-4xl md:text-5xl font-bold mb-8'>
+              Pokémon Games
+            </h1>
+            <p className="text-xl">Choose your game:</p>
+          </div>
+          <div className='flex flex-col md:flex-row justify-center  mb-20 md:mb-32'>
             <Link to="/game/pokeboard">
-              <div className="relative group">
-                <img src={pokeboardImage} className="block w-64 h-64 object-cover rounded-lg shadow-md" alt="Poke Board" />
+              <div className="relative group m-6">
+                <img src={pokeboardImage} className="block w-80 h-80 object-cover rounded-lg shadow-md" alt="Poke Board" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xl font-bold">Poke Board</span>
+                  <span className="text-white text-2xl font-bold">Poke Board</span>
                 </div>
               </div>
             </Link>
             <Link to="/game/pokefight">
-              <div className="relative group">
-                <img src={pokefightImage} className="block w-64 h-64 object-cover rounded-lg shadow-md" alt="Poke Fight" />
+              <div className="relative group m-6">
+                <img src={pokefightImage} className="block w-80 h-80 object-cover rounded-lg shadow-md" alt="Poke Fight" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xl font-bold">Poke Fight</span>
+                  <span className="text-white text-2xl font-bold">Poke Fight</span>
                 </div>
               </div>
             </Link>
           </div>
-        </div>
+      
       </div>
     // </ProtectedRoute>
    
