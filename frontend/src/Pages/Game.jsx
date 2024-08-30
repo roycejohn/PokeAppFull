@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import pokeboardImage from '../assets/memoryGame.png';
 import pokefightImage from '../assets/fightLogo.png';
-import ProtectedRoute from '../components/ProtectedRoute';
+// import ProtectedRoute from '../components/ProtectedRoute';
 
 function Game() {
   return (
-    <ProtectedRoute>
+    // <ProtectedRoute>
       <div className="text-center py-8">
         <div className="my-8 max-w-4xl mx-auto">
           <h1 className='text-5xl font-bold mb-4 text-gray-800'>
@@ -32,7 +32,7 @@ function Game() {
           </div>
         </div>
       </div>
-    </ProtectedRoute>
+    // </ProtectedRoute>
    
   );
 }

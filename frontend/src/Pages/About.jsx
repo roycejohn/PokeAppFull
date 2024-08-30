@@ -1,9 +1,9 @@
-import ProtectedRoute from "../components/ProtectedRoute";
+// import ProtectedRoute from "../components/ProtectedRoute";
 
 
 const About = () => {
   return (
-    <ProtectedRoute>
+    // <ProtectedRoute>
       <div className="about-container">
         <h2>About Us</h2>
         <p>Welcome to our Pokémon information website!</p>
@@ -17,7 +17,7 @@ const About = () => {
         </ul>
         <p>Contact us at: @wd_50group</p>
       </div>
-    </ProtectedRoute>
+    // </ProtectedRoute>
     
   );
 }

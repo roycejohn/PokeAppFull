@@ -43,9 +43,9 @@ const Posts = () => {
 
       // setPosts(data);
 
-      setPosts([...posts, data]); // Assuming data is the new post object returned from backend
+      setPosts([...posts, data]);
 
-      setFormValues({ title: '', body: '' }); // Clear form after successful submission
+      setFormValues({ title: '', body: '' }); 
 
     } catch (error) {
       setError(error.message);

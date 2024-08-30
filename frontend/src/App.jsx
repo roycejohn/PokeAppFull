@@ -81,10 +81,10 @@ import About from './Pages/About'
 import Game from './Pages/Game'
 import PokeBoard from './Pages/PokeBoard'
 import PokeFight from './Pages/PokeFight'
-import Signup from './components/Signup';
-import Login from './components/Login'
-import Auth from './components/Auth';
-import Dashboard from './Pages/Dashboard';
+// import Signup from './components/Signup';
+// import Login from './components/Login'
+// import Auth from './components/Auth';
+// import Dashboard from './Pages/Dashboard';
 
 
 
@@ -94,17 +94,17 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route path='/' element={<Auth />} />
+            {/* <Route path='/' element={<Auth />} />
             <Route path= '/signup' element={<Signup />} />
-            <Route path= '/login' element={<Login />} />
-            <Route path="/Home" element={<Home />} />
+            <Route path= '/login' element={<Login />} /> */}
+            <Route path="/home" element={<Home />} />
             <Route path="/pokemons" element={<PokeList />} />
             <Route path="/pokemons/:id" element={<PokeDetails />} />
             <Route path="/game" element={<Game />} />
             <Route path='/game/pokeboard' element={<PokeBoard />} />
             <Route path='/game/pokefight' element={<PokeFight />} />
             <Route path="/about" element={<About />} />
-            <Route path='/dashboard' element={<Dashboard />} />
+            {/* <Route path='/dashboard' element={<Dashboard />} /> */}
           </Routes>
         </div>
         <Footer />

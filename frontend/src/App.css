@@ -4,7 +4,7 @@
   box-sizing: border-box ;
 }
 
-body {
+/* body {
 background: rgb(235, 176, 176);
 background: radial-gradient(circle, rgba(235, 176, 176, 1) 43%, rgba(223, 73, 73, 1) 70%);
 min-height: 100vh;
@@ -37,20 +37,18 @@ background: rgba(189, 57, 57, 0.473);
 backdrop-filter: blur(10px);
 width: 100%;
 z-index: 5;
-/* border-bottom: 2px solid #999; */
 }
 
 
 footer {
-/* background-color: #333;
-color: #fff; */
+
 background: rgba(224, 99, 99, 0.219);
 color: rgb(48, 48, 38);
 backdrop-filter: blur(10px);
 padding: 20px;
 text-align: center;
 width: 100%;
-/* border-top: 2px solid #999 */
+
 }
 
 
@@ -101,5 +99,5 @@ width: 100%;
 .sign-up-form button:hover {
   background-color: #0056b3;
 }
-
+ */
 

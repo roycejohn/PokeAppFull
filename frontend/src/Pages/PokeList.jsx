@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import loadingPoke from "../assets/pokeballAni.gif"
 import pokedexImage from '../assets/pokedex.png'
-import ProtectedRoute from "../components/ProtectedRoute";
+// import ProtectedRoute from "../components/ProtectedRoute";
 
 const PokeList = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -77,7 +77,7 @@ const PokeList = () => {
   }
 
   return (
-    <ProtectedRoute>
+    // <ProtectedRoute>
       <div className="pokedex-page container flex flex-col items-center justify-center p-4">
         <div className="text-center mb-4">
           <img className="h-32 w-96" src={pokedexImage} />
@@ -136,7 +136,7 @@ const PokeList = () => {
           </button>
         </div>
       </div>
-    </ProtectedRoute>
+    // </ProtectedRoute>
   );
 }
 

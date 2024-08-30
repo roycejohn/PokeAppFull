@@ -41,13 +41,13 @@
 // export default Dashboard;
 
 
-import ProtectedRoute from '../components/ProtectedRoute';
+// import ProtectedRoute from '../components/ProtectedRoute';
 
 const Dashboard = () => {
     return (
-        <ProtectedRoute>
+        // <ProtectedRoute>
             <div>Dashboard</div>
-        </ProtectedRoute>
+        // </ProtectedRoute>
     );
 };
 
