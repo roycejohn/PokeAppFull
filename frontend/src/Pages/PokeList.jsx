@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import loadingPoke from "../assets/pokeballAni.gif"
 import pokedexImage from '../assets/pokedex.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 // import ProtectedRoute from "../components/ProtectedRoute";
 
 const PokeList = () => {
@@ -13,7 +15,7 @@ const PokeList = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const pageSize = 20;
+  const pageSize = 12;
 
   useEffect(() => {
     // fetch('https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json')
@@ -78,32 +80,39 @@ const PokeList = () => {
 
   return (
     // <ProtectedRoute>
-      <div className="pokedex-page container flex flex-col items-center justify-center p-4">
-        <div className="text-center mb-4">
-          <img className="h-32 w-96" src={pokedexImage} />
-          <h1 className="text-xl text-gray-600 mb-4">Choose Your Pokémon :</h1>
+      <div className="pokedex-page flex flex-col items-center justify-center">
+        <div className="m-4">
+          <img className="h-32 w-96 mb-8" src={pokedexImage} />
+          <h1 className="text-sm md:text-lg mb-4 mx-4">Choose Your Pokémon :</h1>
+        <div className="flex flex-col md:flex-row mb-4 space-x-0 md:space-x-2">
+          <div className="search-wrapper relative flex-grow mb-4">
+            <input
+              type="text"
+              placeholder="Pokémon Name or ID"
+              value={searchTerm}
+              onChange={handleSearchInputChange}
+              className="h-8 px-4 pl-10 rounded-md w-full"
+            />
+            <FontAwesomeIcon icon={faSearch} className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-600" />
+          </div>
+          <div className="h-8 flex items-center justify-center rounded-md">
+            <button 
+              type="button"
+              onClick={handleSearchClick}
+              className="h-8 px-4 border rounded-md focus:outline-none focus:border-blue-500 hover:bg-blue-100 active:bg-blue-200"
+            >
+              Search
+            </button>
+          </div>
         </div>
-        <div className="flex flex col sm:flex-row items-center mb-4">
-          <input
-            type="text"
-            placeholder="Pokémon Name or ID"
-            value={searchTerm}
-            onChange={handleSearchInputChange}
-            className=" px-4 py-2 rounded-md text-gray-900 focus:outline-none focus:bg-gray-200 mb-2 sm:mb-0 sm:mr-2"
-          />
-          <button 
-            type="button"
-            onClick={handleSearchClick}
-            className="mx-2 px-4 py-2 border border-gray-500 bg-transparent text-gray-500 hover:bg-gray-700 hover:text-white rounded-md"
-          >
-            <i className="fas fa-search"></i>
-          </button>
         </div>
-        <div className="w-full">
+        <div className="">
           <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-16">
             {searchResults.map(pokemon => (
-              <li key={pokemon.id} className="poke-cards p-3 m-2 rounded-md flex flex-col items-center">
-                <Link to={`/pokemons/${pokemon.id}`} className="poke-card p-5 rounded-md text-center flex flex-col items-center object-contain w-full h-full">
+              <li 
+                key={pokemon.id} 
+                className="poke-card p-3 m-2 rounded-md flex flex-col items-center">
+                <Link to={`/pokemons/${pokemon.id}`} className=" p-5 rounded-md text-center flex flex-col items-center object-contain">
                   <div className="poke-img-bg w-40 h-40 sm:w-40 sm:h-40 md:w-40 md:h-40 flex items-center justify-center rounded-md overflow-hidden">
                     <img
                       src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
@@ -111,25 +120,27 @@ const PokeList = () => {
                       className="object-contain w-full h-full"
                     />
                   </div>
-                  <h3 className="text-sm sm:text-md md:text-lg font-semibold mt-2">#{pokemon.id}</h3>
-                  <h3 className="text-sm sm:text-md md:text-lg font-semibold">{pokemon.name}</h3>
-                  <p className="text-xs sm:text-sm md:text-md">Type: {pokemon.type.join(', ')}</p>
+                  <div>
+                    <h1 className="text-sm sm:text-md md:text-lg font-semibold mt-2">#{pokemon.id}</h1>
+                    <h2 className="text-sm sm:text-md md:text-lg font-semibold">{pokemon.name}</h2>
+                    <p className="text-xs sm:text-sm md:text-md">Type: {pokemon.type.join(', ')}</p>
+                  </div>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center m-10 space-x-4">
           <button 
             onClick={() => handlePageChange(currentPage - 1)}
-            className="button-back"
+            className="button-back p-2"
             disabled={currentPage === 1}
           >
             Back
           </button>
           <button 
             onClick={() => handlePageChange(currentPage + 1)}
-            className="button-next"
+            className="button-next p-2"
             disabled={currentPage === totalPages}
           >
             Next

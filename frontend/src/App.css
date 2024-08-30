@@ -4,14 +4,27 @@
   box-sizing: border-box ;
 }
 
-/* body {
-background: rgb(235, 176, 176);
-background: radial-gradient(circle, rgba(235, 176, 176, 1) 43%, rgba(223, 73, 73, 1) 70%);
-min-height: 100vh;
-display: flex;
-flex-direction: column;
+
+
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: var(--background-color);
 }
 
+header {
+color: var(--main-text);
+background: var(--header-footer);
+backdrop-filter: blur(10px);
+z-index: 5;
+}
+
+footer {
+background: var(--header-footer);
+color: var(--main-text);
+backdrop-filter: blur(10px);
+}
+/* 
 
 .app-container {
 display: flex;
@@ -29,27 +42,8 @@ align-items: center;
 }
 
 
-header {
-font-weight: 500;
-font-size: large;
-color: rgb(48, 48, 38);
-background: rgba(189, 57, 57, 0.473);
-backdrop-filter: blur(10px);
-width: 100%;
-z-index: 5;
-}
 
 
-footer {
-
-background: rgba(224, 99, 99, 0.219);
-color: rgb(48, 48, 38);
-backdrop-filter: blur(10px);
-padding: 20px;
-text-align: center;
-width: 100%;
-
-}
 
 
 

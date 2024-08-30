@@ -57,24 +57,29 @@ const PokeDetails = () => {
   }
 
   return (
-    <div className="poke-details">
+    <div className="poke-details m-4 md:m-20 relative">
       {pokemon && (
-        <div className="poke-container">
-          <div className="left-column">
-            <div className="poke-details">
-              <h2>{pokemon.name.english}</h2>
-              <p>Type: {pokemon.type.join(", ")}</p>
+        <div className="poke-container mx-auto max-w-screen-lg flex flex-col md:flex-row justify-center items-center rounded-md">
+          <div className="left-column flex-1 p-8">
+            <div className="poke-details font-bold mb-4">
+              <h2 className="text-3xl mb-4">{pokemon.name.english}</h2>
+              <p className="text-xl">Type: {pokemon.type.join(", ")}</p>
             </div>
-            <div className="stat-value">
+            <div className="stat-value text-sm rounded-md">
               {Object.entries(pokemon.base).map(([stat, value]) => {
                 const statClass = stat.toLowerCase().replace(' ', '-');
                 const barStyle = { width: `${(value / 255) * 100}%` };
+
                 return (
-                  <div key={stat} className={`stat-item ${statClass}`}>
-                    <p className="stat-name">{stat}</p>
-                    <div className="stat-bar-container">
-                      <div className="stat-bar" style={barStyle}>
-                        <span className="stat-value-text">{value}</span>
+                  <div 
+                    key={stat} 
+                    className={`stat-item p-2 ${statClass}`}
+                  >
+                    <h1 className="stat-name mb-1">{stat}</h1>
+                    <div className="stat-bar-container rounded-md">
+                      <div className="stat-bar flex items-center justify-center" style={barStyle}>
+                        <span className="stat-value-text">{value}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -82,29 +87,29 @@ const PokeDetails = () => {
               })}
             </div>
           </div>
-          <div className="right-column">
+          <div className="right-column flex-1 py-4 relative">
             <div className="image-details">
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
                 alt={pokemon.name.english}
               />
             </div>
-            <p className="text-overlay"># {pokemon.id}</p>
+            <p className="text-overlay flex items-center justify-center text-6xl  font-bold p-4 m-6 mt-4 "># {pokemon.id}</p>
           </div>
          
         </div>
       )}
-      <div className="flex justify-center mt-10 mx-32">
+      <div className="flex justify-center mt-10 space-x-4">
             <button
               onClick={() => handlePageChange(pokemon.id - 1)}
-              className="button-back"
+              className="button-back p-2"
               disabled={pokemon.id === 1}
             >
               Back
             </button>
             <button
               onClick={() => handlePageChange(pokemon.id + 1)}
-              className="button-next"
+              className="button-next p-2"
               disabled={pokemon.id === 810}
             >
               Next
