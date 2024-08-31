@@ -97,13 +97,13 @@ function PokeFight() {
 
   return (
     <div className="container mx-auto p-4">
-      <h3 className="text-2xl font-bold mb-4 text-center">Pokémon Battle</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <h3 className="text-2xl font-bold m-16 text-center">Pokémon Battle</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 mx-4">
         <div>
-          <h4 className="text-xl font-bold mb-2">Player</h4>
+          <h4 className="text-xl mb-4 p-2">Player</h4>
           <input
             type="text"
-            placeholder="Search Pokémon"
+            placeholder="Your Pokémon"
             value={searchTerm1}
             onChange={handleSearchInputChange1}
             className="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none focus:bg-gray-200"
@@ -121,9 +121,9 @@ function PokeFight() {
           </ul>
           {selectedPokemon && (
             <div className="mt-4 bg-white rounded-lg shadow-md p-4 flex items-center">
-              <div className="w-1/2">
-                <h4 className="text-xl font-semibold">{selectedPokemon.name}</h4>
-                <div className="poke-img-bg w-40 h-40 flex items-center justify-center rounded-md overflow-hidden">
+              <div className="w-1/2 flex flex-col items-center">
+                <h4 className="text-xl font-semibold mb-2">{selectedPokemon.name}</h4>
+                <div className="poke-img-bg w-40 h-40 md:w-56 md:h-56 flex items-center justify-center rounded-md overflow-hidden">
                   <img
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${selectedPokemon.id}.svg`}
                     alt={selectedPokemon.name}
@@ -131,18 +131,31 @@ function PokeFight() {
                   />
                 </div>
               </div>
-              <div className="w-1/2 pl-4">
-                <p className="text-md mb-2"><span className="font-semibold">Type:</span> {selectedPokemon.type.join(', ')}</p>
-                <p className="text-sm font-semibold">Base Stats:</p>
-                <p className="text-sm"><span className="font-semibold">HP:</span> {selectedPokemon.base.HP}</p>
-                <p className="text-sm"><span className="font-semibold">Attack:</span> {selectedPokemon.base.Attack}</p>
-                <p className="text-sm"><span className="font-semibold">Defense:</span> {selectedPokemon.base.Defense}</p>
+              <div className="w-1/2 pl-6">
+                <p className=" text-xs md:text-lg mb-1">
+                  <span className="text-blue-500 md:text-xl">Type:
+                  </span> {selectedPokemon.type.join(', ')} 
+                </p>
+                <p className="text-xs md:text-lg mb-1 text-red-400">Base Stats:
+                </p>
+                <p className="text-xs">
+                  <span className="">HP:
+                  </span> {selectedPokemon.base.HP}
+                </p>
+                <p className="text-xs">
+                  <span className="">Attack:
+                  </span> {selectedPokemon.base.Attack}
+                </p>
+                <p className="text-xs">
+                  <span className="">Defense:
+                  </span> {selectedPokemon.base.Defense}
+                </p>
               </div>
             </div>
           )}
         </div>
         <div>
-          <h4 className="text-xl font-bold mb-2">Comp</h4>
+          <h4 className="text-xl mb-4 p-2">Computer</h4>
           <input
             type="text"
             placeholder="Search Opponent Pokémon"
@@ -163,9 +176,9 @@ function PokeFight() {
           </ul>
           {opponentPokemon && (
             <div className="mt-4 bg-white rounded-lg shadow-md p-4 flex items-center">
-              <div className="w-1/2">
-                <h4 className="text-xl font-semibold">{opponentPokemon.name}</h4>
-                <div className="poke-img-bg w-40 h-40 flex items-center justify-center rounded-md overflow-hidden">
+              <div className="w-1/2 flex flex-col items-center">
+                <h4 className="text-xl font-semibold mb-2">{opponentPokemon.name}</h4>
+                <div className="poke-img-bg w-40 h-40 md:w-56 md:h-56 flex items-center justify-center rounded-md overflow-hidden">
                   <img
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${opponentPokemon.id}.svg`}
                     alt={opponentPokemon.name}
@@ -173,12 +186,25 @@ function PokeFight() {
                   />
                 </div>
               </div>
-              <div className="w-1/2 pl-4">
-                <p className="text-md mb-2"><span className="font-semibold">Type:</span> {opponentPokemon.type.join(', ')}</p>
-                <p className="text-sm font-semibold">Base Stats:</p>
-                <p className="text-sm"><span className="font-semibold">HP:</span> {opponentPokemon.base.HP}</p>
-                <p className="text-sm"><span className="font-semibold">Attack:</span> {opponentPokemon.base.Attack}</p>
-                <p className="text-sm"><span className="font-semibold">Defense:</span> {opponentPokemon.base.Defense}</p>
+              <div className="w-1/2 pl-6">
+                <p className="text-xs md:text-lg mb-1">
+                  <span className="text-blue-500 md:text-xl">Type:
+                  </span> {opponentPokemon.type.join(', ')}
+                </p>
+                <p className="text-xs md:text-lg mb-1 text-red-400">Base Stats:
+                </p>
+                <p className="text-xs">
+                  <span className="">HP:
+                  </span> {opponentPokemon.base.HP}
+                </p>
+                <p className="text-xs">
+                  <span className="">Attack:
+                  </span> {opponentPokemon.base.Attack}
+                </p>
+                <p className="text-xs">
+                  <span className="">Defense:
+                  </span> {opponentPokemon.base.Defense}
+                </p>
               </div>
             </div>
           )}
@@ -193,11 +219,13 @@ function PokeFight() {
           Fight
         </button>
       </div>
-      <div className="bg-gray-100 p-4 rounded-lg shadow-md mt-4">
+      <div className="min-h-80 bg-gray-100 p-4 rounded-lg shadow-md mb-10 mt-4 mx-4 flex flex-col justify-center">
         <h4 className="text-lg font-bold mb-2">Battle Log</h4>
-        <ul>
+        <ul className='text-xs mt-2 '>
           {battleLog.map((log, index) => (
-            <li key={index}>{log}</li>
+            <li
+              className='my-2' 
+              key={index}>{log}</li>
           ))}
         </ul>
       </div>

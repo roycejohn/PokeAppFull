@@ -54,11 +54,11 @@ const Header = () => {
           <NavLink to="/about" className="hover:text-gray-100">About</NavLink>
         </nav>
         <div className="hidden md:flex items-center mx-4">
-          <img
+          {/* <img
             src={avatar}
             alt="Profile"
             className="w-14 h-14 rounded-full ml-12 cursor-pointer hover:shadow-lg"
-          />
+          /> */}
           {/* <button
             onClick={handleLogout}
             className="ml-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
@@ -83,11 +83,11 @@ const Header = () => {
             <NavLink to="/about" className="block py-2 px-4 font-bold hover:bg-gray-500">About</NavLink>
           </div>
           <div className="sign-list flex justify-center mt-4">
-            <img
+            {/* <img
               src={avatar}
               alt="Profile"
               className="w-10 h-10 rounded-full cursor-pointer hover:shadow-lg"
-            />
+            /> */}
             {/* <button
               onClick={handleLogout}
               className="ml-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"

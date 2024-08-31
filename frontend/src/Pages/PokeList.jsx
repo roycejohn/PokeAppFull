@@ -67,15 +67,22 @@ const PokeList = () => {
 
   if (loading) {
     return (
-      <div className="h-16 w-16">
-        <img src={loadingPoke} alt="Loading" />
-        <p>Loading...</p> 
+      <div className="flex flex-col min-h-screen justify-center items-center">
+        <img 
+          className="h-16 w-16 mb-4"
+          src={loadingPoke} alt="Loading" 
+
+        />
+        <p>Patience, it's the free version! Grab a coffee while we load. 😄 </p> 
       </div>
     );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="flex flex-col min-h-screen
+     justify-center items-center">
+              Error: {error}
+            </div>;
   }
 
   return (

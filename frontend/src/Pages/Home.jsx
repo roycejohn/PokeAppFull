@@ -24,10 +24,10 @@ const Home = () => {
                     <p className='text-sm mb-8'>Explore the Pokémon world with our detailed Pokédex. Discover and learn about your favorite Pokémon.</p>
                     <p className='text-sm'>Enjoy our engaging Pokémon memory board game. Perfect for quick, fun sessions!</p>
                     <div className='m-8'>
-                        <button className='button-left mx-4 p-2' onClick={() => window.location.href = '/pokemons'}>
+                        <button className='button-left mx-4 my-2 p-2' onClick={() => window.location.href = '/pokemons'}>
                             See Pokedex
                         </button>
-                        <button className='button-right mx-2 p-2' onClick={() => window.location.href = '/game'}>
+                        <button className='button-right mx-2 p-2 px-4' onClick={() => window.location.href = '/game'}>
                             Play Games
                         </button>
                     </div>
