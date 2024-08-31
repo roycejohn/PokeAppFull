@@ -61,11 +61,9 @@ const authVerifyUser = async (req, res) => {
     return res.json({ status: true, message: 'Authorized' });
 };
 
-// export { loginUser, signupUser, authVerifyUser, logoutUser };
 
 
 
-// New function to get all users
 const getAllUsers = async (req, res) => {
     try {
         const users = await User.find({});
