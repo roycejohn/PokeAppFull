@@ -106,27 +106,44 @@ function PokeBoard() {
   };
 
   return (
-    <div className="game-page">
-      <header className="header">
+    <div className="game-page relative mx-auto max-w-4xl min-h-fit flex flex-col items-center justify-center m-8">
+      <div className="board-title flex items-center justify-between w-full py-2 pl-10">
         <h1>PokeMatch</h1>
-        <button onClick={() => window.location.reload()}>Reset</button>
-      </header>
-      {notification && <div className="notification-container"><div className="notification">{notification}</div></div>}
-      <div id="game">
+        <button
+          className="bg-blue-500 text-white p-2 mx-10 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-150 ease-in-out font-thin text-sm"
+          onClick={() => window.location.reload()}
+        >
+          Reset
+        </button>
+      </div>
+      {notification &&
+        <div className="notification-container fixed flex justify-center items-center p-2">
+          <div className="notification rounded-md flex text-center">{notification}
+          </div>
+        </div>
+      }
+      <div id="game" className='grid grid-cols-4 space-x-2'>
         {pokemon.map((poke, index) => {
           const type = poke.types[0]?.type?.name || 'normal';
           const color = colors[type];
+
           return (
             <div
               key={index}
-              className="card"
+              className="card relative rounded-md mt-4 w-20 h-20 md:w-40 md:h-40"
               style={{ backgroundColor: color }}
               data-pokemon={poke.name}
               onClick={(e) => handleCardClick(e, poke)}
             >
               <div className="front"></div>
-              <div className="back rotated" style={{ backgroundColor: color }}>
-                <img src={poke.sprites.front_default} alt={poke.name} />
+              <div 
+                className="back rotated" 
+                style={{ backgroundColor: color }}>
+                <img 
+                  className='h-16 w-16 md:h-28 md:w-28'
+                  src={poke.sprites.front_default} 
+                  alt={poke.name} 
+              />
                 <h2>{poke.name}</h2>
               </div>
             </div>

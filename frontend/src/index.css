@@ -225,46 +225,22 @@ p {
 
 /* POKEBOARD */
 
-/* .game-page {
-  position: relative;
-  margin: 5px auto;
-  max-width: 800px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  color: rgb(56, 56, 55);
-}
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  width: 100%;
-  background: #499eee;
-}
-
-#game {
-  display: grid;
-  grid-template-columns: repeat(4, 160px);
-  grid-template-rows: repeat(4, 160px);
-  gap: 10px;
+.board-title {
+  background: var(--tertiary-color);
+  box-shadow: 1px 1px #EAE2E2;
 }
 
 .card {
-  box-shadow: 0 5px 10px rgba(200, 200, 200, 0.9);
-  border-radius: 20px;
-  margin-top: 20px;
-  position: relative;
+  box-shadow: 1px 1px #EAE2E2;
   overflow: hidden;
   transform-style: preserve-3d;
   cursor: pointer;
-  width: 160px;
-  height: 160px;
   transition: transform 0.5s;
+}
+
+.card h2{
+  font-size: 0.48rem;
 }
 
 .front, .back {
@@ -277,7 +253,6 @@ p {
   position: absolute;
   backface-visibility: hidden;
 }
-
 .front {
   background-image: url('https://images6.fanpop.com/image/photos/38900000/Pokeball-pokemon-38912743-894-894.png');
   background-position: center;
@@ -286,33 +261,29 @@ p {
   background-color: rgb(235, 176, 176);
 }
 
-.back img {
-  width: 80px;
-  height: 80px;
-}
-
 .rotated {
   transform: rotateY(180deg);
 }
-
 .notification-container {
-  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
 .notification {
+  background-color: var(--tertiary-color);
+  box-shadow: 1px 1px #EAE2E2;
+  /* border-radius: 5px;
+  text-align: center; */
+}
+.notification.red {
+  background-color: #F44336;
+}
+.notification-start {
   margin: 20px 0;
   padding: 10px;
-  background-color: #ffeb3b;
-  border: 1px solid #fbc02d;
+  background-color: #499EEE;
+  box-shadow: 1px 1px #EAE2E2;
   border-radius: 5px;
-  color: #333;
-  font-weight: bold;
   text-align: center;
-} */
+}
