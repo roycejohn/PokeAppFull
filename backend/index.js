@@ -65,6 +65,7 @@ app.use(express.json());
 // app.use('/auth', userRoutes);
 
 // Pokémon JSON Data Routes
+app.get("/", (req, res) => res.send("Pokemon API & Game Backend"));
 app.get('/json/pokemon', getAllPokemons);
 app.get('/json/pokemon/:id', getPokemonById);
 app.get('/json/pokemon/:id/:info', getPokemonInfo);
