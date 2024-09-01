@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import logoPoke from '../assets/logo-poke.png';
 import pokemon from '../assets/pokemon.svg';
 // import ProtectedRoute from '../components/ProtectedRoute';
@@ -24,12 +25,12 @@ const Home = () => {
                     <p className='text-sm mb-8'>Explore the Pokémon world with our detailed Pokédex. Discover and learn about your favorite Pokémon.</p>
                     <p className='text-sm'>Enjoy our engaging Pokémon memory board game. Perfect for quick, fun sessions!</p>
                     <div className='m-8'>
-                        <button className='button-left mx-4 my-2 p-2' onClick={() => window.location.href = '/pokemons'}>
+                        <Link to="/pokemons" className='button-left mx-4 my-2 p-2'>
                             See Pokedex
-                        </button>
-                        <button className='button-right mx-2 p-2 px-4' onClick={() => window.location.href = '/game'}>
+                        </Link>
+                        <Link to="/game" className='button-right mx-2 p-2 px-4'>
                             Play Games
-                        </button>
+                        </Link>   
                     </div>
                 </div>
 
