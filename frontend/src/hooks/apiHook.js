@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const BASE_URL = 'http://localhost:3000'; // Change this when deploying, e.g., 'https://your-deployment-url.com'
-
+const BASE_URL = 'https://pokeapigame.onrender.com'; // Change this when deploying, e.g., 'https://your-deployment-url.com'
+// const BASE_URL = 'http://localhost:3000';
 const useApi = (endpoint) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
