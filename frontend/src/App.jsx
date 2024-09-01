@@ -97,6 +97,7 @@ function App() {
             {/* <Route path='/' element={<Auth />} />
             <Route path= '/signup' element={<Signup />} />
             <Route path= '/login' element={<Login />} /> */}
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/pokemons" element={<PokeList />} />
             <Route path="/pokemons/:id" element={<PokeDetails />} />
