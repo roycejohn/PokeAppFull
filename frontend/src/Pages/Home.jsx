@@ -9,7 +9,7 @@ const Home = () => {
     // <ProtectedRoute>
     <section className='home'>
         {/* col 1  */}
-        <div className="first-col mx-auto max-w-screen-2xl min-h-fit m-10 pb-2">
+        <div className="first-col mx-auto max-w-screen-2xl min-h-fit m-10 pb-10 pt-10 ">
             <div className='flex flex-col md:flex-row items-center'>
                 <div className='flex-1 px-1'>
                     <h1 className='font-bold text-2xl md:text-4xl mb-4 tracking-widest'>WELCOME</h1>
