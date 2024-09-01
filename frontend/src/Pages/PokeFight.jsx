@@ -13,7 +13,8 @@ function PokeFight() {
   const [battleOver, setBattleOver] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:4000/json/pokemon')
+    fetch('https://pokeapigameproject.onrender.com')
+    // fetch('http://localhost:4000/json/pokemon')
       .then(response => response.json())
       .then(data => {
         const formattedData = data.map(pokemon => ({
