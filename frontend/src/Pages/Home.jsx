@@ -9,7 +9,7 @@ const Home = () => {
     // <ProtectedRoute>
     <section className='home'>
         {/* col 1  */}
-        <div className="first-col mx-auto max-w-screen-2xl min-h-fit m-20 pb-2">
+        <div className="first-col mx-auto max-w-screen-2xl min-h-fit m-10 pb-2">
             <div className='flex flex-col md:flex-row items-center'>
                 <div className='flex-1 px-1'>
                     <h1 className='font-bold text-2xl md:text-4xl mb-4 tracking-widest'>WELCOME</h1>
@@ -24,8 +24,8 @@ const Home = () => {
                     </h2>
                     <p className='text-sm mb-8'>Explore the Pokémon world with our detailed Pokédex. Discover and learn about your favorite Pokémon.</p>
                     <p className='text-sm'>Enjoy our engaging Pokémon memory board game. Perfect for quick, fun sessions!</p>
-                    <div className='m-8'>
-                        <Link to="/pokemons" className='button-left mx-4 my-2 p-2'>
+                    <div className='m-8 flex flex-row justify-center'>
+                        <Link to="/pokemons" className='button-left mx-2 p-2'>
                             See Pokedex
                         </Link>
                         <Link to="/game" className='button-right mx-2 p-2 px-4'>
@@ -39,9 +39,9 @@ const Home = () => {
                     <img 
                         src={logoPoke}
                         alt="logoPoke"
-                        className='h-96 w-96 mb-10'
+                        className='h-4/5 w-4/5 md:h-3/5 md:w-3/5 mb-4'
                     />
-                    <h1>Discover. Play. Have Fun.</h1>
+                    <h1 className='text-sm md:text-xl'>Discover. Play. Have Fun.</h1>
                 </div> 
             </div>
         </div>

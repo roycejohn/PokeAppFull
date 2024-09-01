@@ -220,7 +220,7 @@ const PokeList = () => {
           className="h-16 w-16 mb-4"
           src={loadingPoke} alt="Loading" 
         />
-        <p>Patience, it's the free version! Grab a coffee while we load. 😄 </p> 
+        <p className="flex text-center px-4 text-xs md:text-lg">Patience, it's the free version! Grab a coffee while we load. 😄 </p> 
       </div>
     );
   }
